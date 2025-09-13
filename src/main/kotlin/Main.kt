@@ -1,14 +1,13 @@
-fun compressString (text: String): String {
-    fun compressString (text: String): String {
-        if(text.length <= 1)
+
+    fun compressString(text: String): String {
+        if (text.length <= 1)
             return text
         var result = ""
         var count = 1
         for (i in 0 until text.length - 1) {
-            if (text[i] == text [i+1]) {
+            if (text[i] == text[i + 1]) {
                 count++
-            }
-            else {
+            } else {
                 result += text[i]
                 if (count > 1)
                     result += count
@@ -16,7 +15,7 @@ fun compressString (text: String): String {
 
             }
         }
-        result += text[text.length -1]
+        result += text[text.length - 1]
         if (count > 1) {
             result += count
         }
