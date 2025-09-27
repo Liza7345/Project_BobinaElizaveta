@@ -63,8 +63,8 @@ fun main() {
     println("Введите натуральное число: " )
     val inputNum = readln()
     val number = inputNum.toIntOrNull()
-    if (number == null number < 0){
-        println("Ошибка! Введено не натуральное число)
+    if (number == null || number < 0){
+        println("Ошибка! Введено не натуральное число")
         return
     }
     val binary = decimalToBinary(number)
@@ -79,7 +79,7 @@ fun main() {
     val num1 = input[0].toDoubleOrNull()
     val num2 = input[1].toDoubleOrNull()
     val op = input[2]
-    if (num1 == null  num2 == null){
+    if (num1 == null || num2 == null){
         println("Error")
         return
     }
