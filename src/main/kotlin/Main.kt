@@ -107,7 +107,7 @@ fun main() {
     val num2 = input[1].toDoubleOrNull()
     val op = input[2]
     if (num1 == null || num2 == null){
-        println("Error")
+        println("Ошибка")
         return
     }
     val calcResult = calculate(num1,num2,op)
@@ -116,5 +116,35 @@ fun main() {
     }
     else {
         println ("$calcResult")
+    }
+    println ("Введите число n: ")
+    val n = readln().toIntOrNull()
+    println ("Введите основание степени x: ")
+    val x = readln().toIntOrNull()
+    if (n==null || x== null) {
+        println ("Ошибка")
+        return
+    }
+    val y = stepen(n,x)
+    if (y!=null) {
+        println ("Существует: $x^$y = $n")
+    }
+    else {
+        println ("Не существует!")
+    }
+    println ("Введите первую цифру: ")
+    val d1 = readln().toIntOrNull()
+    println ("Введите вторую цифру: ")
+    val d2 = readln().toIntOrNull()
+    if (d1 == null || d2 == null || d1 !in 0..9 || d2 !in 0..9 || d1 == d2) {
+        println ("Ошибка")
+        return
+    }
+    val ch = createCh (d1,d2)
+    if (ch != null) {
+        println ("Существует: $ch")
+    }
+    else {
+        println ("Невозможно")
     }
 }
