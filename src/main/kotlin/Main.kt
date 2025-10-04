@@ -50,6 +50,33 @@ fun calculate(num1: Double, num2: Double, op:String): Double? {
         else -> null
     }
 }
+fun stepen (n: Int, x: Int): Int? {
+    if (x==0) {
+        return if (n==0) 1 else null
+    }
+    if (x==1) {
+        return if (n==1) 0 else null
+    }
+    if (n==1) {
+        return 0
+    }
+    var p = 1
+    var y = 0
+    while (p <= n) {
+        if (p==n) return y
+        p*=x
+        y++
+    }
+    return null
+}
+fun createCh (d1: Int, d2: Int): Int? {
+    return when {
+        d1 % 2 == 1 && d2 % 2 == 0 -> d2*10+d1
+        d1 % 2 == 0 && d2 % 2 == 1 -> d1*10+d2
+        d1 % 2 == 1 && d2 % 2 == 1 -> d2*10+d1
+        else -> null
+    }
+}
 fun main() {
     println("Введите строку: ")
     val str = readln()
