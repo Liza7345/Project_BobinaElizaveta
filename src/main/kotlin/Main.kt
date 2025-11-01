@@ -77,7 +77,7 @@ fun createCh (d1: Int, d2: Int): Int? {
         else -> null
     }
 }
-fun main() {
+fun task1And2 () {
     println("Введите строку: ")
     val str = readln()
     if (str.isEmpty()) {
@@ -87,6 +87,9 @@ fun main() {
     val result = compressString(str)
     println("Результат: $result")
     countAndSortChars(str)
+}
+
+fun task3 () {
     println("Введите натуральное число: " )
     val inputNum = readln()
     val number = inputNum.toIntOrNull()
@@ -96,7 +99,9 @@ fun main() {
     }
     val binary = decimalToBinary(number)
     println("Число $number В двоичной системе: $binary")
+}
 
+fun task4 () {
     println ("Введите числа и операции через пробел: " )
     val input = readln().trim().split(" ")
     if (input.size != 3){
@@ -117,6 +122,8 @@ fun main() {
     else {
         println ("$calcResult")
     }
+}
+fun task5 () {
     println ("Введите число n: ")
     val n = readln().toIntOrNull()
     println ("Введите основание степени x: ")
@@ -132,6 +139,8 @@ fun main() {
     else {
         println ("Не существует!")
     }
+}
+fun task6 () {
     println ("Введите первую цифру: ")
     val d1 = readln().toIntOrNull()
     println ("Введите вторую цифру: ")
@@ -146,5 +155,44 @@ fun main() {
     }
     else {
         println ("Невозможно")
+    }
+}
+fun main() {
+    while (true) {
+        println("Для завершения программы нажмите N")
+        println("Введите номер задачи от 1 до 6:")
+        val t = readln().trim()
+        when (t.uppercase()) {
+            "N" -> {
+                println("Программа завершена!")
+                return
+            }
+            "1", "2" -> {
+                println("Задачи 1 и 2 (сжатие строки и подсчет символов)")
+                task1And2()
+            }
+
+            "3" -> {
+                println("Задача 3 (перевод в двоичную систему)")
+                task3()
+            }
+
+            "4" -> {
+                println("Задача 4 (калькулятор)")
+                task4()
+            }
+
+            "5" -> {
+                println("Задача 5 (проверка степени)")
+                task5()
+            }
+
+            "6" -> {
+                println("Задача 6 (составление нечетного числа из цифр)")
+                task6()
+            }
+
+            else -> println("Ошибка: введите число от 1 до 6")
+        }
     }
 }
